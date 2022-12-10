@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1067083310608",
+    "project_id": "gigivet22firebase",
+    "storage_bucket": "gigivet22firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067083310608:android:580f9e74b7daf28f80cc95",
+        "android_client_info": {
+          "package_name": "com.davdev88.gigivet22firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1067083310608-jm94nd12s6q0730d8ghhc6d8js9e0tf0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.davdev88.gigivet22firebase",
+            "certificate_hash": "25458841d907bd10e884350870f533cee8d17df1"
+          }
+        },
+        {
+          "client_id": "1067083310608-ufm234hshfq533edjkh29iej7fmu0ef5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeHWlk1TNaGmnadDoSo1nyLbwe3zvMREc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1067083310608-ufm234hshfq533edjkh29iej7fmu0ef5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1067083310608-8kqc0deldv51dsf7n2dmbfga0a15l2oh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.gigivet22firebase"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
