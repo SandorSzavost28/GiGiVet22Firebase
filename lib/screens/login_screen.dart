@@ -18,7 +18,7 @@ class LoginScreen extends StatelessWidget {
           context: context,
         );
 
-        nav.pushReplacementNamed('profile_ui');
+        nav.pushReplacementNamed('mainmenu');
       },
     );
 
@@ -38,14 +38,14 @@ class LoginScreen extends StatelessWidget {
                 if (!state.user!.emailVerified) {
                   Navigator.pushNamed(context, 'verify-email');
                 } else {
-                  Navigator.pushReplacementNamed(context, 'profile_ui');
+                  Navigator.pushReplacementNamed(context, 'mainmenu');
                 }
               }),
               AuthStateChangeAction<UserCreated>((context, state) {
                 if (!state.credential.user!.emailVerified) {
                   Navigator.pushNamed(context, 'verify-email');
                 } else {
-                  Navigator.pushReplacementNamed(context, 'profile_ui');
+                  Navigator.pushReplacementNamed(context, 'mainmenu');
                 }
               }),
               mfaAction,

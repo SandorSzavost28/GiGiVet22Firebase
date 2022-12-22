@@ -27,7 +27,7 @@ class Profile1_Screen extends StatelessWidget {
           context: context,
         );
 
-        nav.pushReplacementNamed('profile_ui');
+        nav.pushReplacementNamed('mainmenu');
       },
     );
 

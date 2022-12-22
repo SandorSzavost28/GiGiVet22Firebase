@@ -68,7 +68,11 @@ void main() async {
     // ),
   ]);
 
-  runApp(const MyApp());
+
+
+  runApp(const MyApp(
+    
+  ));
 }
 
 // Overrides a label for en locale
@@ -99,7 +103,9 @@ class MyApp extends StatelessWidget {
       return 'verify-email';
     }
 
-    return 'profile_ui';
+    print('ID de usuario firmado (main): ${auth.currentUser!.uid}');
+
+    return 'mainmenu';
   }
 
 
@@ -129,15 +135,9 @@ class MyApp extends StatelessWidget {
           context: context,
         );
 
-        nav.pushReplacementNamed('profile_ui');
+        nav.pushReplacementNamed('mainmenu');
       },
     );
-
-
-
-
-
-
 
 
 
@@ -145,6 +145,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
+
+      //builder del Google_nav_bar
+      // builder: (context, child) {
+      //   return Directionality(textDirection: TextDirection.ltr, child: child!);
+      // },
 
       // theme: ThemeData(
       //   // This is the theme of your application.
@@ -171,160 +176,18 @@ class MyApp extends StatelessWidget {
       
       initialRoute: initialRoute,
 
+
       routes: appRoutes,
       
-      // {
-      //   '/': (context) {
-      //     return SignInScreen(
-      //       actions: [
-      //         ForgotPasswordAction((context, email) {
-      //           Navigator.pushNamed(
-      //             context,
-      //             '/forgot-password',
-      //             arguments: {'email': email},
-      //           );
-      //         }),
-      //         VerifyPhoneAction((context, _) {
-      //           Navigator.pushNamed(context, '/phone');
-      //         }),
-      //         AuthStateChangeAction<SignedIn>((context, state) {
-      //           if (!state.user!.emailVerified) {
-      //             Navigator.pushNamed(context, '/verify-email');
-      //           } else {
-      //             Navigator.pushReplacementNamed(context, '/profile');
-      //           }
-      //         }),
-      //         AuthStateChangeAction<UserCreated>((context, state) {
-      //           if (!state.credential.user!.emailVerified) {
-      //             Navigator.pushNamed(context, '/verify-email');
-      //           } else {
-      //             Navigator.pushReplacementNamed(context, '/profile');
-      //           }
-      //         }),
-      //         mfaAction,
-      //         EmailLinkSignInAction((context) {
-      //           Navigator.pushReplacementNamed(context, '/email-link-sign-in');
-      //         }),
-      //       ],
-      //       styles: const {
-      //         EmailFormStyle(signInButtonVariant: ButtonVariant.filled),
-      //       },
-      //       //headerBuilder: headerImage('assets/images/flutterfire_logo.png'),
-      //       //sideBuilder: sideImage('assets/images/flutterfire_logo.png'),
-      //       subtitleBuilder: (context, action) {
-      //         return Padding(
-      //           padding: const EdgeInsets.only(bottom: 8),
-      //           child: Text(
-      //             action == AuthAction.signIn
-      //                 ? 'Welcome to Firebase UI! Please sign in to continue.'
-      //                 : 'Welcome to Firebase UI! Please create an account to continue',
-      //           ),
-      //         );
-      //       },
-      //       footerBuilder: (context, action) {
-      //         return Center(
-      //           child: Padding(
-      //             padding: const EdgeInsets.only(top: 16),
-      //             child: Text(
-      //               action == AuthAction.signIn
-      //                   ? 'By signing in, you agree to our terms and conditions.'
-      //                   : 'By registering, you agree to our terms and conditions.',
-      //               style: const TextStyle(color: Colors.grey),
-      //             ),
-      //           ),
-      //         );
-      //       },
-      //     );
-      //   },
-      //   '/verify-email': (context) {
-      //     return EmailVerificationScreen(
-      //       //headerBuilder: headerIcon(Icons.verified),
-      //       //sideBuilder: sideIcon(Icons.verified),
-      //       actionCodeSettings: actionCodeSettings,
-      //       actions: [
-      //         EmailVerifiedAction(() {
-      //           Navigator.pushReplacementNamed(context, '/profile');
-      //         }),
-      //         AuthCancelledAction((context) {
-      //           FirebaseUIAuth.signOut(context: context);
-      //           Navigator.pushReplacementNamed(context, '/');
-      //         }),
-      //       ],
-      //     );
-      //   },
-      //   '/phone': (context) {
-      //     return PhoneInputScreen(
-      //       actions: [
-      //         SMSCodeRequestedAction((context, action, flowKey, phone) {
-      //           Navigator.of(context).pushReplacementNamed(
-      //             '/sms',
-      //             arguments: {
-      //               'action': action,
-      //               'flowKey': flowKey,
-      //               'phone': phone,
-      //             },
-      //           );
-      //         }),
-      //       ],
-      //       //headerBuilder: headerIcon(Icons.phone),
-      //       //sideBuilder: sideIcon(Icons.phone),
-      //     );
-      //   },
-      //   '/sms': (context) {
-      //     final arguments = ModalRoute.of(context)?.settings.arguments
-      //         as Map<String, dynamic>?;
-
-      //     return SMSCodeInputScreen(
-      //       actions: [
-      //         AuthStateChangeAction<SignedIn>((context, state) {
-      //           Navigator.of(context).pushReplacementNamed('/profile');
-      //         })
-      //       ],
-      //       flowKey: arguments?['flowKey'],
-      //       action: arguments?['action'],
-      //       //headerBuilder: headerIcon(Icons.sms_outlined),
-      //       //sideBuilder: sideIcon(Icons.sms_outlined),
-      //     );
-      //   },
-      //   '/forgot-password': (context) {
-      //     final arguments = ModalRoute.of(context)?.settings.arguments
-      //         as Map<String, dynamic>?;
-
-      //     return ForgotPasswordScreen(
-      //       email: arguments?['email'],
-      //       headerMaxExtent: 200,
-      //       //headerBuilder: headerIcon(Icons.lock),
-      //       //sideBuilder: sideIcon(Icons.lock),
-      //     );
-      //   },
-      //   '/email-link-sign-in': (context) {
-      //     return EmailLinkSignInScreen(
-      //       actions: [
-      //         AuthStateChangeAction<SignedIn>((context, state) {
-      //           Navigator.pushReplacementNamed(context, '/');
-      //         }),
-      //       ],
-      //       provider: emailLinkProviderConfig,
-      //       headerMaxExtent: 200,
-      //       //headerBuilder: headerIcon(Icons.link),
-      //       //sideBuilder: sideIcon(Icons.link),
-      //     );
-      //   },
-      //   '/profile': (context) {
-      //     return ProfileScreen(
-      //       actions: [
-      //         SignedOutAction((context) {
-      //           Navigator.pushReplacementNamed(context, '/');
-      //         }),
-      //         mfaAction,
-      //       ],
-      //       actionCodeSettings: actionCodeSettings,
-      //       showMFATile: true,
-      //     );
-      //   },
-      // },
+      
+      
+      supportedLocales: [
+        Locale('en', 'US'), // English, no country code
+        // Locale('es', 'ES'), // Spanish, no country code
+      ],
 
       locale: const Locale('es'),
+      
 
       localizationsDelegates: [
         FirebaseUILocalizations.withDefaultOverrides(const LabelOverrides()),
@@ -333,17 +196,13 @@ class MyApp extends StatelessWidget {
         FirebaseUILocalizations.delegate,
       ],
 
-
-
-
-
-
-
-
       //home: const MyHomePage(title: 'Gigi Firebase Home Page'),
     );
   }
 }
+
+
+
 
 // class MyHomePage extends StatefulWidget {
 //   const MyHomePage({super.key, required this.title});

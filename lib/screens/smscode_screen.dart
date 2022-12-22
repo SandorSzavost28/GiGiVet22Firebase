@@ -13,7 +13,7 @@ class SmsCodeScreen extends StatelessWidget {
           return SMSCodeInputScreen(
             actions: [
               AuthStateChangeAction<SignedIn>((context, state) {
-                Navigator.of(context).pushReplacementNamed('profile_ui');
+                Navigator.of(context).pushReplacementNamed('mainmenu');
               })
             ],
             flowKey: arguments?['flowKey'],

@@ -24,7 +24,7 @@ class VerifyEmailScreen extends StatelessWidget {
             actionCodeSettings: _actionCodeSettings,
             actions: [
               EmailVerifiedAction(() {
-                Navigator.pushReplacementNamed(context, 'profile_ui');
+                Navigator.pushReplacementNamed(context, 'mainmenu');
               }),
               AuthCancelledAction((context) {
                 FirebaseUIAuth.signOut(context: context);

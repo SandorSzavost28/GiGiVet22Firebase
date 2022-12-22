@@ -12,6 +12,10 @@ final Map<String, Widget Function(BuildContext)> appRoutes = {
   'profile_ui'          : ( _ ) => Profile1_Screen(),
   'sms'                 : ( _ ) => EmailLinkScreen(),
   'verify-email'        : ( _ ) => VerifyEmailScreen(),
+  'home'                : ( _ ) => HomeScreen(),
+  'search1'             : ( _ ) => Search_1_Screen(),
+
+
 
 
 
