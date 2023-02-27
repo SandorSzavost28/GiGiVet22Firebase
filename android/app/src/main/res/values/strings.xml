@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="facebook_app_id">1304979323419236</string>
+    <string name="fb_login_protocol_scheme">fb1304979323419236</string>
+    <string name="facebook_client_token">1ad4bdc7b053d97ccb3cb92af69a7b6c</string>
+    <string name="app_name">Gigivet22firebase</string>
+
+</resources>

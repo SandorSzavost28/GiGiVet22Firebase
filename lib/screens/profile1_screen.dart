@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 final _actionCodeSettings = ActionCodeSettings(
   url: 'https://gigivet22firebase.firebaseapp.com', //esta correcta para que envie el correo de verificación
@@ -35,6 +36,7 @@ class Profile1_Screen extends StatelessWidget {
             actions: [
               SignedOutAction((context) {
                 Navigator.pushReplacementNamed(context, 'login');
+                SystemNavigator.pop();
               }),
               mfaAction,
             ],

@@ -63,8 +63,8 @@ class LoginScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 8),
                 child: Text(
                   action == AuthAction.signIn
-                      ? 'Welcome to Firebase UI! Please sign in to continue.'
-                      : 'Welcome to Firebase UI! Please create an account to continue',
+                      ? 'Welcome to GigiFirebase! Please sign in to continue.'
+                      : 'Welcome to GigiFirebase! Please create an account to continue',
                 ),
               );
             },

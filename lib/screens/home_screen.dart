@@ -11,12 +11,18 @@ class HomeScreen extends StatelessWidget {
 
     return Center(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Home Screen GIGI22 Firebase'),
-            SizedBox(height: 20,),
-            Text('Bienvenido: ${auth.currentUser!.displayName}'),
+            const Text('Home Screen  Firebase'),
+            const SizedBox(height: 20,),
+            Text('Display Name: ${auth.currentUser!.displayName}'),
+            Text('uid: ${auth.currentUser!.uid}'),
+            Text('email: ${auth.currentUser!.email}'),
+            Text('emailVerified: ${auth.currentUser!.emailVerified}'),
+            // Text('Bienvenido: ${auth.currentUser!.providerData}'),
+            // Text('Bienvenido: ${auth.currentUser!.emailVerified}'),
+
 
           ],
         ),
